@@ -19,9 +19,7 @@ export class AppService {
     this.subdomain =  this.configService.get('subdomain');
     this.secretKey =  this.configService.get('secret');
     this.email =  this.configService.get('email');
-    this.userId =  this.configService.get<number>('userId');
-
-
+    this.userId =  this.configService.get('userId');
   }
 
   getHello(): string {
