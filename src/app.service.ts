@@ -31,14 +31,14 @@ export class AppService {
 
     console.log({userToken, userlocal: this.userId, comp:+userToken !== +this.userId})
 
-    if(+userToken !== +this.userId){
-      return null;
-    }
+    // if(+userToken !== +this.userId){
+    //   return null;
+    // }
 
     const payload : IUserRequest = {
       name:'no name',
       email: this.email,
-      jti:this.userId,
+      jti:+userToken
     }
     
     const token =  jwt.sign(payload, this.secretKey,{ algorithm: 'HS256'}); // Puedes ajustar la duración del token según tus necesidades
