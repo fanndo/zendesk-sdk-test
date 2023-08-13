@@ -41,7 +41,7 @@ export class AppService {
       jti:+userToken
     }
     
-    const token =  jwt.sign(payload, this.secretKey,{ algorithm: 'HS256'}); // Puedes ajustar la duración del token según tus necesidades
+    const token =  jwt.sign(payload,'Zbiwa3Ji8w3oTm8INcFGCcun08jR4syHIBDuGJs0ozwDviGg',{ algorithm: 'HS256'}); // Puedes ajustar la duración del token según tus necesidades
     
     const redirect = `https://${this.subdomain}.zendesk.com/access/jwt?jwt=${token}` ;
 
