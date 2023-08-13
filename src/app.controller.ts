@@ -18,6 +18,8 @@ export class AppController {
   @Post()
   async token(@Body() user:IUserTokenRequest){
 
+    console.log({user})
+
     const result = await this.appService.getToken(+user.user_token);
     if (result == null){
       throw new BadRequestException('Not Found Custom');

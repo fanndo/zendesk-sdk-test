@@ -30,6 +30,8 @@ export class AppService {
 
   async getToken(userToken:number): Promise<any> {
 
+    console.log({userToken, userlocal: this.userId})
+
     if(+userToken != this.userId){
       return null;
     }
