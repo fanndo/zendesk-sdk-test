@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Post, Res } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, HttpCode, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
 import * as jwt from 'jsonwebtoken';
@@ -16,6 +16,7 @@ export class AppController {
   }
 
   @Post()
+  @HttpCode(200)
   async token(@Body() user:IUserTokenRequest){
 
 
