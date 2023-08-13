@@ -37,7 +37,7 @@ FROM node:18-alpine3.15 AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm build
+RUN npm run build
 
 
 # Production image, copy all the files and run next
@@ -48,7 +48,7 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 
-RUN yarn install --prod
+RUN npm install --prod
 
 COPY --from=builder /app/dist ./dist
 
