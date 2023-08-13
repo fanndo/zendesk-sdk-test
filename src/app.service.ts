@@ -19,7 +19,8 @@ export class AppService {
     this.subdomain =  this.configService.get('subdomain');
     this.secretKey =  this.configService.get('secret');
     this.email =  this.configService.get('email');
-    this.userId =  this.configService.get('userId');
+    console.log(this.configService.get('userId'))
+    this.userId =  +this.configService.get('userId');
   }
 
   getHello(): string {
@@ -28,9 +29,9 @@ export class AppService {
 
   async getToken(userToken:number): Promise<any> {
 
-    console.log({userToken, userlocal: this.userId})
+    console.log({userToken, userlocal: this.userId, comp:+userToken !== +this.userId})
 
-    if(+userToken != this.userId){
+    if(+userToken !== +this.userId){
       return null;
     }
 
