@@ -37,7 +37,7 @@ export class AppService {
 
     const payload : IUserRequest = {
       name:'no name',
-      email: this.email,
+      email: 'fanndo447@gmail.com',
       jti:+userToken
     }
     
